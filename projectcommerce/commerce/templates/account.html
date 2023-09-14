@@ -1,0 +1,39 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block main %}
+<!--account-page-->
+<div class="account-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-2">
+        <img src="image_s/image1.png" alt="" width="100%">
+      </div>
+      <div class="col-2">
+        <div class="form-container">
+          <div class="form-btn">
+            <span onclick="login()">Login</span>
+            <span onclick="register()">Register</span>
+            <hr id="Indicator">
+          </div>
+          <form id="LoginForm">
+            <input type="text" placeholder="Username" required>
+            <input type="password" placeholder="Password" required>
+            <a href="index.html" class="btn">Login</a>
+            <!---- <button type="submit" class="btn" href="index.html">Login</button>-->
+            </a>
+            <a href="index.html">Forgot Password</a>
+          </form>
+          <form id="RegForm">
+            <input type="text" class="username" placeholder="Username" required>
+            <input type="email" class="email" placeholder="Email" required>
+            <input type="password" class="password" placeholder="Password" required>
+            <a href="index.html" class="btn">Register</a>
+            <!--- <button type="submit" class="btn" href="index.html">Register</button>-->
+            </a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

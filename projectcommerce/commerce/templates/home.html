@@ -1,0 +1,141 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block main %}
+<!---- featured categories-->
+<!---featured products-->
+<div class="small-container">
+  <h2 class="title">Featured Products</h2>
+  <div class="row">
+    {% for data in querydata %}
+    <div class="col-4">
+      <a href="product_details.html">
+        <img src="{{data.image.url}}" alt="a white guy in a wine-coloured t-shirt">
+        <h2>{{data.ProductName}}</h2>
+      </a>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>GH{{data.price}}</p>
+    </div>
+    {% endfor %}
+  </div>
+  <!--latest products-->
+  <h2 class="title">Latest Products</h2>
+  <div class="row">
+    {% for query in queries %}
+    <div class="col-4">
+      <img src="{{query.image.url}}" alt="a gray colured pair of shoes">
+      <h2>{{query.ProductName}}</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>GH{{query.price}}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+<!-------offer-->
+<div class="offer">
+  <div class="small-container">
+    <div class="row">
+      <div class="col-2">
+        <img src="{% static 'im/orange.png' %}" alt="an orange coloured smart watch" class="offer-img">
+      </div>
+      <div class="col-2">
+        <p>Exclusively Available on RedStore</p>
+        <h1>Smart Band 4</h1>
+        <small>The Smart Band 4 features a 39.9% larger
+          (than Mi Band 3) AMOLED color full-touch display with
+          adjustable brightness, everything is clear as can be.
+        </small>
+        <a href="" class="btn"> Buy Now &#8594</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--testimonial-->
+<div class="testimonial">
+  <div class="small-container">
+    <div class="row">
+      <div class="col-3">
+        <i class="fa fa-quote-left"></i>
+        <p>Lorem Ipsum is simply dummy text of the printing
+          and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever.
+        </p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>
+        </div>
+        <img src="image_s/Katty Steves.jpeg" alt="a picture of a fair girl with red hair">
+        <h3>Katty Steves</h3>
+      </div>
+      <div class="col-3">
+        <i class="fa fa-quote-left"></i>
+        <p>Lorem Ipsum is simply dummy text of the printing
+          and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever.
+        </p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>
+        </div>
+        <img src="image_s/Adam Parker.jpeg" alt="a fair guy with black hair">
+        <h3>Adam Parker</h3>
+      </div>
+      <div class="col-3">
+        <i class="fa fa-quote-left"></i>
+        <p>Lorem Ipsum is simply dummy text of the printing
+          and typesetting industry. Lorem Ipsum has been the
+          industry's standard dummy text ever.
+        </p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-o"></i>
+        </div>
+        <img src="image_s/Lizzian_s.jpeg" alt="a fair girl with black hair">
+        <h3>Lizzian Sam Peters</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Brands-->
+<div class="brands">
+  <div class="small-container">
+    <div class="row">
+      <div class="col-5">
+        <img src="image_s/brand_1.jpeg" alt="the brand logo of goorei">
+      </div>
+      <div class="col-5">
+        <img src="image_s/brand_2.jpeg" alt="the brand logo of oppa">
+      </div>
+      <div class="col-5">
+        <img src="image_s/brand_3.jpeg" alt="the brand logo of coca-cola">
+      </div>
+      <div class="col-5">
+        <img src="image_s/brand_4.jpeg" alt="the brand logo of paypal">
+      </div>
+      <div class="col-5">
+        <img src="image_s/brand_5.jpeg" alt="the brand logo of philips">
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block main %}
+<div class="container">
+    <a href="cart.html">
+        <img src="image_s/cart.png" height="30px" width="30px">
+    </a>
+    <img src="image_s/menu.png" class="menu-icon" onclick="menutoggle()">
+</div>
+</div>
+<div>
+    <section class="hero">
+        <div class="heading">
+            <h1>About Us</h1>
+        </div>
+        <div class="contain-er">
+            <div class="hero-content">
+                <h2>Welcome to our website</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                    Quam, adipisci? Quidem vitae molestias nostrum deleniti? <br>
+                    Eius, nemo, sed cumque dicta enim ipsa in impedit deleniti ad autem iure labore non.
+                </p>
+                <button class="bta-button">
+                    Learn more
+                </button>
+                <div class="hero-image">
+                    <img class="h-img" src="image_s/people.jpg">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

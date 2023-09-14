@@ -1,0 +1,103 @@
+{% load static %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedStore Athletics</title>
+  <link rel="stylesheet" href="{% static 'assets/styles.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap" rel="stylesheet">
+  <!--<link rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div class="header">
+    <div class="container">
+      <div class="navbar">
+        <div class="logo">
+          <a href="{% url 'home' %}">
+            <img src="{% static 'im/redlogo.png' %}" width="125px" alt="the company logo for red store">
+          </a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'product' %}">Products</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'account' %}">Account</a></li>
+          </ul>
+        </nav>
+        <a href="{% url 'cart' %}">
+          <img src="{% static 'im/cart.png' %}" height="30px" width="30px">
+        </a>
+        <img src="{% static 'im/menu.png' %}" class="menu-icon" onclick="menutoggle()">
+        <!-- height="30px" width="30px">-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <h1>Give Your Workout <br> A New Style!</h1>
+        <p>Success isn't always about greatness. It's about consistency. Consistent <br>hard Work
+          gains success. Greatness will come.
+        </p>
+      </div>
+      <div class="col-2">
+        <img src="{% static 'im/stationaries.png' %}" alt="two football players looking excited">
+        <a href="{% url 'product' %}" class="btn">Explore Now &#8594;</a>
+      </div>
+    </div>
+  </div>
+  <!-- Main Body -->
+  <div class="">
+    {% block main %}{% endblock %}
+  </div>
+  <!--footer-->
+  <div>
+    <div class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Download App for Andriod and ios phone</p>
+            <div class="app-logo">
+              <img src="{% static 'im/play.png' %}" alt="the brand logo of playstore">
+              <img src="{% static 'im/apple.png' %}" alt="the brand logo of appstore">
+            </div>
+          </div>
+          <div class="footer-col-2">
+            <img src="{% static 'im/redlogo.png' %}" alt="the brand logo of red store athletics">
+            <p>Our Purpose is to Sustainably Make the Pleasure and Benefits
+              of Sports Accessible to many.
+            </p>
+          </div>
+          <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+              <li>Coupons</li>
+              <li>Blog Post</li>
+              <li>Return Policy</li>
+              <li>Join Affiliate</li>
+            </ul>
+          </div>
+          <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+              <li>Facebook</li>
+              <li>Twitter</li>
+              <li>Instagram</li>
+              <li>You tube</li>
+            </ul>
+          </div>
+          <hr>
+          <p class="copyright">Copyright 2023 - Godfred Buabeng</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--js for toggle menu-->
+  <script src="{% static 'assets/scripts' %}"></script>
+</body>
+</html>

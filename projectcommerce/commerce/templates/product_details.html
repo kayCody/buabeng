@@ -1,0 +1,115 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block main %}
+<!--single product details-->
+<div class="small-container single-product">
+  <div class="row">
+    <div class="col-2">
+      <img src="image_s/gallery_1.jpeg" alt="" width="100%" id="ProductImg">
+      <div class="small-img-row">
+        <div class="small-img-col">
+          <img src="image_s/gallery_1.jpeg" alt="" width="100" class="small-img">
+        </div>
+        <div class="small-img-col">
+          <img src="image_s/gallery-2.jpg" alt="" width="100" class="small-img">
+        </div>
+        <div class="small-img-col">
+          <img src="image_s/gallery-3.jpg" alt="" width="100" class="small-img">
+        </div>
+
+        <div class="small-img-col">
+          <img src="image_s/gallery-4.jpg" alt="" width="100" class="small-img">
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <p>Home / T-shirt</p>
+      <h1>Red Printed T-shirt by Guuci</h1>
+      <h4>$300.00</h4>
+      <select>
+        <option>Select size</option>
+        <option>XXL</option>
+        <option>XL</option>
+        <option>Large</option>
+        <option>Medium</option>
+        <option>Small</option>
+      </select>
+      <input type="number" value="1">
+      <a href="" class="btn">Add to cart</a>
+
+      <h3>
+        Product Details <i class="fa fa-indent"></i>
+      </h3>
+      <br>
+      <p>Give your summer wardrobe a style upgrade with the Gucci Men's
+        Active T-shirt. Team with a pair of shorts for your morning workout
+        or denims for your evening out with guys.
+      </p>
+    </div>
+  </div>
+</div>
+<!---title-->
+<div class="small-container">
+  <div class="row row-2">
+    <h2>Related Products</h2>
+    <p>View More</p>
+  </div>
+</div>
+<!--products-->
+<div class="small-container">
+  <div class="row">
+    <div class="col-4">
+      <img src="image_s/product_1.jpeg" alt="a white guy in a wine-coloured t-shirt">
+      <h2>Red Printed T-shirt</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+    <div class="col-4">
+      <img src="image_s/product_2.jpeg" alt="a pair of black shoes">
+      <h2>Black Nick Shoes</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+    <!--- </div>
+        <div class="row">-->
+    <div class="col-4">
+      <img src="image_s/product_3.jpeg" alt="a pair of gray joggers">
+      <h2>Gray Adidas Joggers</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+    <!--</div>
+        <div class="row" >-->
+    <div class="col-4">
+      <img src="image_s/product_4.jpeg" alt="a white guy in a blue-coloured t-shirt">
+      <h2>Blue-Black Printed T-Shirt</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
