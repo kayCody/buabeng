@@ -20,8 +20,12 @@ def product(request):
     return render(request, 'product.html', context)
 def contact(request):
     return render(request, 'contact.html')
-def product_detail(request, id):
-    return render(request, 'product_details.html')
+def product_detail(request):
+    product = Product.objects.get(id = id)
+    context = {
+        'product':product
+    }
+    return render(request, 'product_details.html', context)
 def cart(request):
     return render(request, 'cart.html')
 def account(request):

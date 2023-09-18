@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>All Products - RedStore Athletics</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!--<link rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">-->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="navbar">
+				<div class="logo">
+					<img
+						src="image_s/red_logo.jpeg"
+						width="125px"
+						alt="the company logo for red store"
+					/>
+				</div>
+				<nav>
+					<ul id="MenuItems">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="product.html">Products</a></li>
+						<li><a href="">About</a></li>
+						<li><a href="">Contact</a></li>
+						<li><a href="account.html">Account</a></li>
+					</ul>
+				</nav>
+				<a href="cart.html">
+					<img src="image_s/cart.png" height="30px" width="30px" />
+				</a>
+				<img src="image_s/menu.png" class="menu-icon" onclick="menutoggle()" />
+			</div>
+		</div>
+
+		<!--cart items details-->
+		
+
+		<!--footer-->
+		<div>
+			<div class="footer">
+				<div class="container">
+					<div class="row">
+						<div class="footer-col-1">
+							<h3>Download Our App</h3>
+							<p>Download App for Andriod and ios phone</p>
+							<div class="app-logo">
+								<img
+									src="image_s/play_store.jpeg"
+									alt="the brand logo of playstore"
+								/>
+								<img
+									src="image_s/app_store.jpeg"
+									alt="the brand logo of appstore"
+								/>
+							</div>
+						</div>
+						<div class="footer-col-2">
+							<img
+								src="image_s/logo-white.png"
+								alt="the brand logo of red store athletics"
+							/>
+							<p>
+								Our Purpose is to Sustainably Make the Pleasure and Benefits of
+								Sports Accessible to many.
+							</p>
+						</div>
+						<div class="footer-col-3">
+							<h3>Useful Links</h3>
+							<ul>
+								<li>Coupons</li>
+								<li>Blog Post</li>
+								<li>Return Policy</li>
+								<li>Join Affiliate</li>
+							</ul>
+						</div>
+						<div class="footer-col-4">
+							<h3>Follow Us</h3>
+							<ul>
+								<li>Facebook</li>
+								<li>Twitter</li>
+								<li>Instagram</li>
+								<li>You tube</li>
+							</ul>
+						</div>
+						<hr />
+						<p class="copyright">Copyright 2023 - Pauline Cobbina</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--js for toggle menu-->
+		<script>
+			var MenuItems = document.getElementById(MenuItems);
+
+			MenuItems.style.maxHeight = "0px";
+
+			function menutoggle() {
+				if (MenuItems.style.maxHeight == "0px") {
+					MenuItems.style.maxHeight = "200px";
+				} else {
+					MenuItems.style.maxHeight = "0px";
+				}
+			}
+		</script>
+
+		<script>
+			const productData = [
+				{
+					image: "image_s/buy-1.jpg",
+					name: "Red Printed T-Shirt",
+					price: 30.0,
+				},
+				{
+					image: "image_s/buy-2.jpg",
+					name: "Black Nick Shoes",
+					price: 40.0,
+				},
+				{
+					image: "image_s/buy-3.jpg",
+					name: "Gray Coloured Joggers",
+					price: 75.0,
+				},
+				// Add more product data as needed
+			];
+
+			function populateProductTable() {
+				const productTable = document.getElementById("productTable");
+
+				productData.forEach((product, index) => {
+					const row = productTable.insertRow();
+
+					const imageCell = row.insertCell(0);
+					const quantityCell = row.insertCell(1);
+					const subtotalCell = row.insertCell(2);
+
+					imageCell.innerHTML = `<div class="cart-info">
+                    <img src="${product.image}" alt="${product.name}" />
+                    <div class="milli">
+                        <p>${product.name}</p>
+                        <small>Price : ${product.price.toFixed(2)}</small>
+                        <br />
+                        <a href="#" class="remove-link" data-index="${index}">Remove</a>
+                    </div>
+                </div>`;
+					quantityCell.innerHTML =
+						'<input type="number" class="quantity-input" value="1" min="1">';
+					subtotalCell.textContent = "$" + product.price.toFixed(2);
+
+					// Calculate and update subtotal dynamically
+					const quantityInput = row.querySelector(".quantity-input");
+					quantityInput.addEventListener("input", updateTotal);
+				});
+
+				// Add event listener to the table for removing items
+				productTable.addEventListener("click", function (event) {
+					if (event.target.classList.contains("remove-link")) {
+						removeProduct(event.target.getAttribute("data-index"));
+					}
+				});
+
+				// Initialize total calculation
+				updateTotal();
+			}
+
+			// Function to remove a product
+			function removeProduct(indexToRemove) {
+				const productTable = document.getElementById("productTable");
+				productTable.deleteRow(parseInt(indexToRemove) + 1); // +1 to account for header row
+
+				updateTotal();
+			}
+
+			// Calculate and update subtotal, tax, and total
+			function updateTotal() {
+				let subtotal = 0;
+
+				// Iterate through each product row
+				const rows = document.querySelectorAll("#productTable tr");
+				rows.forEach((row, index) => {
+					if (index > 0) {
+						// Skip the header row
+						const quantityInput = row.querySelector(".quantity-input");
+						const quantity = parseInt(quantityInput.value);
+						const price = productData[index - 1].price; // Subtract 1 to match array index
+						const productSubtotal = price * quantity;
+						subtotal += productSubtotal;
+
+						const subtotalCell = row.cells[2];
+						subtotalCell.textContent = "$" + productSubtotal.toFixed(2);
+					}
+				});
+
+				const tax = subtotal * 0.1; // 10% tax
+				const total = subtotal + tax;
+
+				const subtotalCell = document.getElementById("subtotal");
+				const taxCell = document.getElementById("tax");
+				const totalCell = document.getElementById("total");
+
+				subtotalCell.textContent = "$" + subtotal.toFixed(2);
+				taxCell.textContent = "$" + tax.toFixed(2);
+				totalCell.textContent = "$" + total.toFixed(2);
+			}
+
+			// Call the function to populate the product table
+			populateProductTable();
+		</script>
+	</body>
+</html>

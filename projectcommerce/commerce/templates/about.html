@@ -1,13 +1,6 @@
 {% extends 'base.html'%}
 {% load static %}
 {% block main %}
-<div class="container">
-    <a href="cart.html">
-        <img src="image_s/cart.png" height="30px" width="30px">
-    </a>
-    <img src="image_s/menu.png" class="menu-icon" onclick="menutoggle()">
-</div>
-</div>
 <div>
     <section class="hero">
         <div class="heading">
@@ -23,8 +16,8 @@
                 <button class="bta-button">
                     Learn more
                 </button>
-                <div class="hero-image">
-                    <img class="h-img" src="image_s/people.jpg">
+                <div class="hero-image p-4">
+                    <img class="h-img" src="{% static 'image_s/people.jpg' %}">
                 </div>
             </div>
         </div>

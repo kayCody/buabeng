@@ -13,12 +13,11 @@
     </select>
   </div>
 
-  
+
   <div class="row">
-    {% for query in queries %}
     <div class="col-4">
-      <img src="{{query.image.url}}" alt="a white guy in a wine-coloured t-shirt">
-      <h2>{{query.ProductName}}</h2>
+      <img src="{% static 'image_s/product_1.jpeg' %}" alt="a white guy in a wine-coloured t-shirt">
+      <h2>Red Printed T-shirt</h2>
       <div class="rating">
         <i class="fa fa-star"></i>
         <i class="fa fa-star"></i>
@@ -26,10 +25,170 @@
         <i class="fa fa-star"></i>
         <i class="fa fa-star-o"></i>
       </div>
-      <p>GH {{query.price}}</p>
+      <p>$50.00</p>
     </div>
-    {% endfor %}
 
+    <!--</div>
+        <div class="row,">-->
+    <div class="col-4">
+      <img src="{% static 'image_s/product_2.jpeg' %}" alt="a pair of black shoes">
+      <h2>Black Nick Shoes</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+    <!--- </div>
+        <div class="row">-->
+    <div class="col-4">
+      <img src="{% static 'image_s/product_3.jpeg' %}" alt="a pair of gray joggers">
+      <h2>Gray Adidas Joggers</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+    <!--</div>
+        <div class="row" >-->
+    <div class="col-4">
+      <img src="{% static 'image_s/product_4.jpeg' %}" alt="a white guy in a blue-coloured t-shirt">
+      <h2>Blue-Black Printed T-Shirt</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <img src="{% static 'image_s/product_5 (2).jpeg' %}" alt="a gray colured pair of shoes">
+      <h2>Gray Reebok Shoes</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+
+    <!--</div>
+        <div class="row">-->
+    <div class="col-4">
+      <img src="{% static 'image_s/product_6.jpeg' %}" alt="a white guy in a black coloured shirt">
+      <h2>Black Printed T-shirt</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+    <!--- </div>
+        <div class="row">-->
+    <div class="col-4">
+      <img src="{% static 'image_s/product_7.jpeg' %}" alt="a pair of black and white socks">
+      <h2>Socks Produced by Happy Socks</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+
+    <!--</div>
+        <div class="row" >-->
+    <div class="col-4">
+      <img src="{% static 'image_s/product_8.jpeg' %}" alt="a black watch">
+      <h2>A Black Rolex Watch</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+  </div>
+  <!--latest products second row-->
+  <!--<h2 class="title">Latest Products</h2>-->
+  <div class="row">
+    <div class="col-4">
+      <img src="{% static 'image_s/product_9.jpeg' %}" alt="a black watch">
+      <h2>A Black Cartier Watch</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+
+    <!--</div>
+        <div class="row">-->
+    <div class="col-4">
+      <img src="{% static 'image_s/product_10.jpeg' %}" alt="a pair of black shoes">
+      <h2>Black Puma Shoes</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+    <!--- </div>
+        <div class="row">-->
+    <div class="col-4">
+      <img src="{% static 'image_s/product_11.jpeg' %}" alt="a pair of ash shoes">
+      <h2>Ash Skechers shoes</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+
+    <!--</div>
+        <div class="row" >-->
+    <div class="col-4">
+      <img src="{% static 'image_s/product_12.jpeg' %}" alt="a pair of black joggers">
+      <h2> Black joggers by Saxx 3Six Five Pants</h2>
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <p>$50.00</p>
+    </div>
+  </div>
   <div class="page-btn">
     <span>1</span>
     <span>2</span>
